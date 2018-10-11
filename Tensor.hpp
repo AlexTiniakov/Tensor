@@ -53,7 +53,7 @@ public:
 			else
 				throw Tensor::WrongFormat();
 		}
-		_data = (T *)malloc(sizeof(T) * _len);
+		this->_data = new T[_len];
 	}
 
 	/*
@@ -61,12 +61,6 @@ public:
 	*/
 	Tensor ( const Tensor & rhs ) {
 		*this = rhs;
-		/*_dimSizes = rhs._dimSizes;
-			_len = rhs._len;
-			_data = new T[_len];
-			for (int i = 0; i < _len; i++) {
-				_data[i] = 0;//rhs._data[i];
-			}*/
 	}
 
 	/*
